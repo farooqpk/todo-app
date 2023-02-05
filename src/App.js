@@ -20,12 +20,15 @@ function App() {
 
 
   const addTask = () => {
-    let task = {
-      id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
-      taskName: newTask,
-      complete: false
+    if(newTask){
+      let task = {
+        id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
+        taskName: newTask,
+        complete: false
+      }
+      setTodo([...todoList, task])
     }
-    setTodo([...todoList, task])
+    
   }
 
   const removeTask = (id) => {
